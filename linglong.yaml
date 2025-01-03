@@ -3,26 +3,26 @@ version: "1"
 package:
   id: com.evernote.deepin
   name: com.evernote.deepin
-  version: 1.0.0.0
+  version: 1.0.0.2
   kind: app
   description: |
-    com.evernote.deepin_7.2.32.8411deepin5_amd64
+    signed_com.evernote.deepin_7.2.32.8411deepin7_amd64.deb
 
-base: org.deepin.base.wine
-runtime: org.deepin.runtime.wine
+base: org.deepin.base.wine/23.2.0
+runtime: org.deepin.runtime.wine/23.2.1
 
 command:
   - /opt/apps/com.evernote.deepin/files/run.sh
 
 sources:
   - kind: file
-    url: https://aptly.uniontech.com/pkg/nonfree-eagle/release-candidate/d2luZTgtcnVudGltZTIyMDI0LTA5LTAzIDEzOjE1OjAx/pool/non-free/c/com.evernote.deepin/com.evernote.deepin_7.2.32.8411deepin5_amd64.deb
-    digest: 42f20b7c4a43ccf615ce593135f3aaeeb7d8915c9360281ce6e35c8e9ca451ea
+    url: https://winedata-dev.deepin.com/apps/com.evernote.deepin/9385190/signed_com.evernote.deepin_7.2.32.8411deepin7_amd64.deb
+    digest: fe97bbc4a26694cab57c227fd91de2b73d4214322b97bc86bca152839285fee9
 
 build: |
   set -x
   SOURCES="linglong/sources"
-  dpkg-deb -x $SOURCES/com.evernote.deepin_7.2.32.8411deepin5_amd64.deb $SOURCES/com.evernote.deepin
+  dpkg-deb -x $SOURCES/signed_com.evernote.deepin_7.2.32.8411deepin7_amd64.deb $SOURCES/com.evernote.deepin
   # run.sh替换
   FILE_PATH="$SOURCES/com.evernote.deepin/opt/apps/com.evernote.deepin/files/run.sh" 
   sed -i -e 's|/opt/deepin-wine8-stable|/runtime/deepin-wine8-stable|g' \

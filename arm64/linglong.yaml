@@ -8,8 +8,8 @@ package:
   description: |
     convert from com.evernote.deepin_7.2.32.8411deepin2_arm64.deb
 
-base: org.deepin.base.wine/23.0.0/arm64
-runtime: org.deepin.runtime.wine/23.0.0/arm64
+base: org.deepin.base.wine/23.2.0/arm64
+runtime: org.deepin.runtime.wine/23.2.1/arm64
 
 command:
   - /opt/apps/com.evernote.deepin/files/run.sh
